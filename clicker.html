@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+
+<body>
+  <p>score</p>
+  <p id="score">score:0</p>
+  <button id="upgrade1">upgrade lol</button>
+  <button id="upgrade2">upgrade but loller</button>
+  <br>
+  <img height="400" id="button" width="400"
+    src="https://helios-i.mashable.com/imagery/articles/05bSntYcqJRhsoQYkHIMesr/images-1.fill.size_2000x1633.v1611691161.png"
+    alt="button">
+
+  </div>
+</body>
+</head>
+<script>
+  var score = 0
+  var increaseValue = 1
+  var cost = 5
+  var nothing = 0
+  document.getElementById("button").addEventListener("click", addscore)
+  document.getElementById("upgrade1").addEventListener("click", doubleclick)
+  document.getElementById("upgrade2").addEventListener("click", autoclicker)
+
+  function addscore() {
+    score = score + increaseValue
+    document.getElementById("score").innerText = score
+  }
+  function doubleclick() {
+    if (score >= 5) {
+      score = score - cost
+      increaseValue = 2
+      console.log(cost)
+    }
+  }
+
+  function autoclicker() {
+    setInterval(addscore, 2000)
+    console.log()
+  }
+</script>
